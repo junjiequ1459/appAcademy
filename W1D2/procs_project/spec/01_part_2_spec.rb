@@ -64,13 +64,13 @@ describe "PART 2" do
       proc_1 = Proc.new { |n| n / 2.0 }
       proc_2 = Proc.new { |n| n * 1000 }
 
-      expect { alternating_mapper([1,2,3,4,5], proc_1, proc_2) }.to_not raise_error
+      expect { alternating_mapper([1, 2, 3, 4, 5], proc_1, proc_2) }.to_not raise_error
     end
 
     it "should return a new array where all of the elements at even indices are the results when those elements are passed into the first proc and all of the elements at odd indices are the results when those elements are passed into the second proc" do
       half = Proc.new { |n| n / 2.0 }
       times_thousand = Proc.new { |n| n * 1000 }
-      expect(alternating_mapper([1,10,4,7,5], half, times_thousand)).to eq([0.5, 10000, 2.0, 7000, 2.5])
+      expect(alternating_mapper([1, 10, 4, 7, 5], half, times_thousand)).to eq([0.5, 10000, 2.0, 7000, 2.5])
     end
   end
 end

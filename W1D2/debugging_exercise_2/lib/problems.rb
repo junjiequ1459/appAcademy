@@ -2,63 +2,60 @@
 # You should implement your methods in this file.
 # Feel free to use the debugger when you get stuck.
 def prime?(num)
-    return false if num < 2
+  return false if num < 2
 
-    (2...num).each do |factor|
-        if num % factor == 0
-            return false
-        end
+  (2...num).each do |factor|
+    if num % factor == 0
+      return false
     end
-    true
+  end
+  true
 end
 
 def largest_prime_factor(num)
-    for i in (num-1).downto(0)
-        if prime?(i) && num % i == 0
-            return i
-        end
+  for i in (num - 1).downto(0)
+    if prime?(i) && num % i == 0
+      return i
     end
-    num
+  end
+  num
 end
-
 
 def unique_chars?(str)
-    obj = {}
+  obj = {}
 
-    for i in 0...str.length
-        if obj[str[i]]
-            return false
-        else
-            obj[str[i]] = 1
-        end
+  for i in 0...str.length
+    if obj[str[i]]
+      return false
+    else
+      obj[str[i]] = 1
     end
-    true
+  end
+  true
 end
-
 
 def dupe_indices(arr)
-    obj = {}
-    arr.each_with_index do |ele,i|
-        if obj[ele]
-            obj[ele] << i
-        else
-            obj[ele] = [i]
-        end
+  obj = {}
+  arr.each_with_index do |ele, i|
+    if obj[ele]
+      obj[ele] << i
+    else
+      obj[ele] = [i]
     end
-    obj.filter {|k,v| v.length > 1}
+  end
+  obj.filter { |k, v| v.length > 1 }
 end
 
+def ana_array(a, b)
+  obj_1 = {}
+  obj_2 = {}
+  a.each { |ele| obj_1[ele] ? obj_1[ele] += 1 : obj_1[ele] = 1 }
+  b.each { |ele| obj_2[ele] ? obj_2[ele] += 1 : obj_2[ele] = 1 }
 
-def ana_array(a,b)
-    obj_1 = {}
-    obj_2 = {}
-    a.each {|ele| obj_1[ele]? obj_1[ele]+= 1: obj_1[ele] =1}
-    b.each {|ele| obj_2[ele]? obj_2[ele]+= 1: obj_2[ele] =1}
-
-    obj_1 == obj_2
-
+  obj_1 == obj_2
 end
-p ana_array(["i","c","e","m","a","n"], ["c","i","n","e","m","a"])
+
+p ana_array(["i", "c", "e", "m", "a", "n"], ["c", "i", "n", "e", "m", "a"])
 p dupe_indices(["a", "b", "c", "c", "b"])
 p unique_chars?("rexqu")
 p largest_prime_factor(11)
