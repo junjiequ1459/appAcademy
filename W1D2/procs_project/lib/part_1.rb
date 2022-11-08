@@ -16,6 +16,24 @@ def my_count(arr, &prc)
   count
 end
 
+def my_any?(arr, &prc)
+  arr.each { |e| return true if prc.call(e) }
+  false
+end
+
+def my_all?(arr, &prc)
+  arr.each { |e| return false if !prc.call(e) }
+  true
+end
+
+def my_none?(arr, &prc)
+  arr.each { |e| return false if prc.call(e) }
+  true
+end
+
+p my_none?([3, 5, 7, 11]) { |n| n.even? }
+p my_all?([3, 5, 7, 11]) { |n| n.odd? }
+p my_any?([7, 10, 3, 5]) { |n| n.even? }
 p my_count([1, 4, 3, 8]) { |n| n.even? }
 p my_select([1, 2, 3, 8]) { |n| n.even? }
 p my_map([1, 2, 3]) { |n| 2 * n }
