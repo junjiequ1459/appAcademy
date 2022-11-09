@@ -1,20 +1,19 @@
-def partition(arr,num)
+def partition(arr, num)
   list_1 = []
   list_2 = []
-  
-  arr.each {|e| e >=  num ? list_2 << e : list_1 << e }
-  return list_1 , list_2
-  
+
+  arr.each { |e| e >= num ? list_2 << e : list_1 << e }
+  return list_1, list_2
 end
 
-def merge(hash_1,hash_2)
+def merge(hash_1, hash_2)
   result = {}
-  hash_1.each {|k,v| result[k] = v}
-  hash_2.each {|k,v| result[k] = v}
+  hash_1.each { |k, v| result[k] = v }
+  hash_2.each { |k, v| result[k] = v }
   result
 end
 
-def censor(str,arr)
+def censor(str, arr)
   list_str = str.split(" ")
   result_list = []
 
@@ -34,7 +33,7 @@ def censor_word(str)
   result_str = ""
   str.split("").each do |letter|
     if vowels.include? letter
-      result_str += '*' 
+      result_str += "*"
     else
       result_str += letter
     end
@@ -42,23 +41,18 @@ def censor_word(str)
   result_str
 end
 
-
 def power_of_two?(num)
   total = 1
-  if num == 1 
+  if num == 1
     return true
   end
 
   while num > total
     total *= 2
-    
+
     if num == total
       return true
-    
     end
   end
   false
 end
-
-
-
