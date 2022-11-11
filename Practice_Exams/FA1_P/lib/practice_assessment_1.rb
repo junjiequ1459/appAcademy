@@ -72,3 +72,5 @@ square_it = Proc.new { |el| el * el }
 minus_hundred = Proc.new { |el| el - 100 }
 
 p procformation([1, 2, -3, 4, -5], is_positive, square_it, minus_hundred)
+
+#testing
