@@ -28,7 +28,7 @@ class Dog
   end
 
   def bark
-    if age > 3
+    if @age > 3
       return @bark.upcase
     end
     @bark.downcase
@@ -43,4 +43,4 @@ class Dog
   end
 end
 
-dog1 = Dog.new("Fido", "German Shepard", 3, "Bork!", ["Bacon", "Chicken"])
+# dog1 = Dog.new("Fido", "German Shepard", 3, "Bork!", ["Bacon", "Chicken"])
