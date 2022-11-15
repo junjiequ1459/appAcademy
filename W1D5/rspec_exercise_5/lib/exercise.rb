@@ -5,6 +5,12 @@ def zip(*arrays)
   end
 end
 
+# expect(zip(array_1, array_2)).to eq([
+#   ["a", 1],
+#   ["b", 2],
+#   ["c", 3]
+# ])
+
 def zany_zip(*arrays)
   length = arrays.map(&:length).max
 
